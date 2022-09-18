@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RPCViewer&amp;Player</string>
+    <string name="title_home">Pop</string>
+    <string name="title_dashboard">Rock</string>
+    <string name="title_notifications">Classic</string>
+
+</resources>

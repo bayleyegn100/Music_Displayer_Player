@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/popfragment"
+        android:icon="@drawable/pop"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/rockfragment"
+        android:icon="@drawable/rock"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/classicfragment"
+        android:icon="@drawable/calsssic"
+        android:title="@string/title_notifications" />
+
+</menu>
