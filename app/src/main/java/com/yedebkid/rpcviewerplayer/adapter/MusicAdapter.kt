@@ -12,7 +12,7 @@ class MusicAdapter(
     private val musicDataset: MutableList<SongDomainData> = mutableListOf()
 ) : RecyclerView.Adapter<MusicViewHolder>() {
 
-    fun updateFlowers(newSong: List<SongDomainData>){ // sth   Helper method to clear data, add all new flowers and notify dataset change
+    fun updateSongs(newSong: List<SongDomainData>){ // sth   Helper method to clear data, add all new flowers and notify dataset change
         musicDataset.clear()
         musicDataset.addAll(newSong)
         notifyDataSetChanged()
@@ -29,8 +29,6 @@ class MusicAdapter(
 
     override fun onBindViewHolder(holder: MusicViewHolder, position: Int) =
         holder.bind(musicDataset[position])
-
-
     override fun getItemCount(): Int =
         musicDataset.size
 }

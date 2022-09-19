@@ -27,10 +27,6 @@ class PopFragment : Fragment(), ViewContractForPop {
         FragmentPopBinding.inflate(layoutInflater)
     }
 
-//    private val musicDatabase by lazy {
-//        MusicDatabase
-//    }
-
     private val musicAdapter by lazy {
         MusicAdapter()
     }
@@ -39,7 +35,6 @@ class PopFragment : Fragment(), ViewContractForPop {
             musicsDao = MusicDatabase.getMusicDatabase(requireContext()).getMusicsDao()
         )
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         presenter.initialization(this)
@@ -59,10 +54,10 @@ class PopFragment : Fragment(), ViewContractForPop {
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             adapter = musicAdapter
         }
+
         savedInstanceState?.getParcelable<Parcelable>("RECYCLE_STATE")?.let {
             binding.recyclerview.layoutManager?.onRestoreInstanceState(it)
         }
-
         return binding.root
     }
 
@@ -80,7 +75,6 @@ class PopFragment : Fragment(), ViewContractForPop {
             )
         }
     }
-
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         binding.recyclerview.layoutManager?.onRestoreInstanceState(
@@ -94,11 +88,10 @@ class PopFragment : Fragment(), ViewContractForPop {
         presenter.destroy()
     }
     override fun loadingPopMusic(isLoading: Boolean) {
-//        presenter.getPopMusics()
         Toast.makeText(requireContext(), "Loading", Toast.LENGTH_LONG).show()
     }
     override fun onSuccess(popMusics: List<SongDomainData>) {
-        musicAdapter.updateFlowers(popMusics)
+        musicAdapter.updateSongs(popMusics)
         Toast.makeText(
             requireContext(),
             "Success: ${popMusics.first().artistName}",
@@ -113,7 +106,6 @@ class PopFragment : Fragment(), ViewContractForPop {
                 dialog.dismiss()
             }
     }
-
     override fun isNetworkAvailable(isAvailable: Boolean) {
         if (isAvailable) {
             AlertDialog.Builder(requireActivity())

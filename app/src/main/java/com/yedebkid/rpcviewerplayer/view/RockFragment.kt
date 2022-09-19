@@ -92,7 +92,7 @@ class RockFragment : Fragment(), ViewContractForRock {
     }
 
     override fun onSuccess(rockMusics: List<SongDomainData>) {
-        musicAdapter.updateFlowers(rockMusics)
+        musicAdapter.updateSongs(rockMusics)
         Toast.makeText(
             requireContext(),
             "Success: ${rockMusics.first().artistName}",

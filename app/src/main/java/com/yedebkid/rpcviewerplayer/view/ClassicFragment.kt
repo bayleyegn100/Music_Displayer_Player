@@ -93,7 +93,7 @@ class ClassicFragment : Fragment(), ViewContractForClassic {
     }
 
     override fun onSuccess(ClassicMusics: List<SongDomainData>) {
-        musicAdapter.updateFlowers(ClassicMusics)
+        musicAdapter.updateSongs(ClassicMusics)
 
         Toast.makeText(
             requireContext(),

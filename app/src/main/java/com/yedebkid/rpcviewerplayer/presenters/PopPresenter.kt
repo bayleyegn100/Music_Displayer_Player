@@ -20,7 +20,6 @@ class PopMusicPresenterImplementation(
     private val repo: MusicRepo = MusicRepoImplementation(musicsDao),
     private var viewContractPop: ViewContractForPop? = null,
     private val disposable: CompositeDisposable = CompositeDisposable(),
-    private val musicRepository: MusicRepo = MusicRepoImplementation(musicsDao)
 ) : PopPresenter {
     override fun initialization(viewContract: ViewContractForPop) {
         viewContractPop = viewContract
