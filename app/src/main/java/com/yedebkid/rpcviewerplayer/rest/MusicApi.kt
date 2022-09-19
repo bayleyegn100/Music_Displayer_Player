@@ -35,7 +35,6 @@ interface MusicApi {
     companion object {
         const val BASE_URL = "https://itunes.apple.com/"
         private const val PATH_SEARCH= "search"
-        const val IMAGE_URL = "https://is4-ssl.mzstatic.com/image/thumb/Music126/v4/0d/0e/e1/0d0ee1be-55c6-c16d-7752-6688f17e3ca5/886444426886.jpg/60x60bb.jpg"
     }
 
 }

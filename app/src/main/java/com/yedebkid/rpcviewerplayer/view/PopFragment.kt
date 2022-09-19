@@ -19,6 +19,7 @@ import com.yedebkid.rpcviewerplayer.databinding.FragmentPopBinding
 import com.yedebkid.rpcviewerplayer.model.domain.SongDomainData
 import com.yedebkid.rpcviewerplayer.presenters.PopMusicPresenterImplementation
 import com.yedebkid.rpcviewerplayer.presenters.ViewContractForPop
+import kotlinx.coroutines.delay
 
 class PopFragment : Fragment(), ViewContractForPop {
 
@@ -26,16 +27,16 @@ class PopFragment : Fragment(), ViewContractForPop {
         FragmentPopBinding.inflate(layoutInflater)
     }
 
-    private val musicDatabase by lazy {
-        MusicDatabase
-    }
+//    private val musicDatabase by lazy {
+//        MusicDatabase
+//    }
 
     private val musicAdapter by lazy {
         MusicAdapter()
     }
     private val presenter by lazy {  // The presenter object view will use to interact with
         PopMusicPresenterImplementation(
-            musicsDao = musicDatabase.getMusicDatabase(context).getMusicsDao()
+            musicsDao = MusicDatabase.getMusicDatabase(requireContext()).getMusicsDao()
         )
     }
 
@@ -88,26 +89,22 @@ class PopFragment : Fragment(), ViewContractForPop {
             )
         )
     }
-
     override fun onStop() {
         super.onStop()
         presenter.destroy()
     }
-
     override fun loadingPopMusic(isLoading: Boolean) {
+//        presenter.getPopMusics()
         Toast.makeText(requireContext(), "Loading", Toast.LENGTH_LONG).show()
     }
-
     override fun onSuccess(popMusics: List<SongDomainData>) {
         musicAdapter.updateFlowers(popMusics)
-
         Toast.makeText(
             requireContext(),
             "Success: ${popMusics.first().artistName}",
             Toast.LENGTH_LONG
         ).show()
     }
-
     override fun onFailure(error: Throwable) {
         AlertDialog.Builder(requireActivity())
             .setTitle("Error Occurred.")

@@ -3,7 +3,6 @@ package com.yedebkid.rpcviewerplayer.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import com.yedebkid.rpcviewerplayer.R
 import com.yedebkid.rpcviewerplayer.databinding.MusicItemBinding

@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/classicfragment"
-        android:icon="@drawable/calsssic"
+        android:icon="@drawable/classic_ic"
         android:title="@string/title_notifications" />
 
 </menu>

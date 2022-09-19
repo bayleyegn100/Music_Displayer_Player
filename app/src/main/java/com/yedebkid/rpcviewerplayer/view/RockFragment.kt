@@ -28,7 +28,7 @@ class RockFragment : Fragment(), ViewContractForRock {
     }
     private val presenter by lazy {
         RockMusicPresenterImplementation(
-            musicsDao = MusicDatabase.getMusicDatabase(context.).getMusicsDao()
+            musicsDao = MusicDatabase.getMusicDatabase(requireContext()).getMusicsDao()
         )
     }
 

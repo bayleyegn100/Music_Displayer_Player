@@ -7,6 +7,7 @@ import com.yedebkid.rpcviewerplayer.model.domain.SongDomainData
 import com.yedebkid.rpcviewerplayer.rest.MusicRepo
 import com.yedebkid.rpcviewerplayer.rest.MusicRepoImplementation
 import io.reactivex.disposables.CompositeDisposable
+import kotlinx.coroutines.delay
 
 interface PopPresenter {
     fun initialization(viewContract: ViewContractForPop)
@@ -32,7 +33,7 @@ class PopMusicPresenterImplementation(
         }
     }
     override fun getPopMusics() {
-        viewContractPop?.loadingPopMusic(true)
+ //       viewContractPop?.loadingPopMusic(true)
         repo.getMusicsPop()
             .subscribe(
                 { popMusics -> viewContractPop?.onSuccess(popMusics) },

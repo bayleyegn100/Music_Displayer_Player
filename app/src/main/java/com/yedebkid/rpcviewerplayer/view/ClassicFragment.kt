@@ -30,7 +30,7 @@ class ClassicFragment : Fragment(), ViewContractForClassic {
     }
     private val presenter by lazy {  // The presenter object view will use to interact with
         ClassicMusicPresenterImplementation(
-            musicsDao = MusicDatabase.getMusicDatabase(context.).getMusicsDao()
+            musicsDao = MusicDatabase.getMusicDatabase(requireContext()).getMusicsDao()
         )
     }
 
